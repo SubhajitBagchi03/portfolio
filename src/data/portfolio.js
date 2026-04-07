@@ -71,6 +71,7 @@ export const projects = [
     description:
       "A cricket auction platform for the Star Champions League. Full auction flow with team management, player bidding, and dynamic UI for live events.",
     github: "https://github.com/SubhajitBagchi03/auction-site",
+    liveUrl: "https://star-champions-league.onrender.com/",
     number: "03",
   },
   {

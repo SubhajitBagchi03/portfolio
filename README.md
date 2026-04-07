@@ -31,7 +31,7 @@ A full-stack browser-based IDE with real-time Node.js execution and AI-powered a
 ### 03. Star Champions Auction
 A cricket auction platform for the Star Champions League. Features a full auction flow with team management and player bidding.
 - **Stack**: React, JavaScript, CSS.
-- **Links**: [GitHub](https://github.com/SubhajitBagchi03/auction-site)
+- **Links**: [GitHub](https://github.com/SubhajitBagchi03/auction-site) | [Live Demo](https://star-champions-league.onrender.com/)
 
 ### 04. Hiringo Job Portal
 A responsive job portal with seamless booking integration and authentication, built during the Innobyte Services internship.
