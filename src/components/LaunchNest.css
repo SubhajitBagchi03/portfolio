@@ -1,0 +1,187 @@
+.launchnest-section {
+  position: relative;
+  overflow: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.ln-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: clamp(24px, 4vw, 40px);
+}
+
+.ln-status-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--red);
+  border-radius: 50%;
+  animation: ln-pulse 2s ease-in-out infinite;
+}
+
+@keyframes ln-pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(200, 16, 46, 0.4); }
+  50% { opacity: 0.7; box-shadow: 0 0 0 8px rgba(200, 16, 46, 0); }
+}
+
+/* ========== MASSIVE STAGGERED H1 EFFECT ========== */
+.ln-massive-title-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: clamp(32px, 5vw, 64px);
+}
+
+.ln-massive-word {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(80px, 18vw, 300px);
+  line-height: 0.8;
+  letter-spacing: -0.05em;
+  text-transform: lowercase;
+  color: var(--cream);
+  position: relative;
+  overflow: hidden;
+  width: max-content;
+}
+
+.ln-bounce-right {
+  animation: bounceRightAnim 8s linear infinite alternate;
+}
+
+.ln-bounce-left {
+  animation: bounceLeftAnim 8s linear infinite alternate;
+}
+
+@keyframes bounceRightAnim {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(100vw - 100%)); }
+}
+
+@keyframes bounceLeftAnim {
+  0% { transform: translateX(calc(100vw - 100%)); }
+  100% { transform: translateX(0); }
+}
+
+.ln-word-shifted {
+  margin-left: clamp(40px, 10vw, 160px);
+}
+
+.ln-tagline {
+  max-width: 700px;
+  font-style: italic;
+  font-size: clamp(20px, 2.8vw, 38px);
+}
+
+.ln-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(20px, 3vw, 48px);
+}
+
+/* ========== FEATURE ROWS LIKE PIC 2 ========== */
+.ln-features-list {
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.ln-feature-row {
+  cursor: default;
+  perspective: 1200px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.ln-feature-row-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+  width: 100%;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease, border-radius 0.3s ease, padding 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+/* On hover: turn orangish red, grow a bit, flip vertically and come back */
+.ln-feature-row:hover .ln-feature-row-inner {
+  background: #ff3300; /* Orangish red */
+  transform: scale(1.03) rotateX(360deg);
+  border-radius: 8px;
+  padding: 18px 16px; /* give some inner breathing room when scaled */
+}
+
+/* Remove border from the last item so it doesn't double up */
+.ln-feature-row:last-child {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.ln-feature-row-left {
+  flex: 0 0 50%;
+  text-align: left;
+}
+
+.ln-feature-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(16px, 1.8vw, 22px);
+  letter-spacing: -0.02em;
+  color: var(--cream);
+  margin: 0;
+  white-space: normal;
+  transition: color 0.3s ease;
+}
+
+.ln-feature-row:hover .ln-feature-name {
+  color: #fff; /* contrast against orangish red */
+}
+
+.ln-feature-row-right {
+  flex: 0 0 50%;
+  text-align: right;
+  padding-left: 20px;
+}
+
+.ln-feature-desc {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(16px, 1.8vw, 22px);
+  color: var(--cream);
+  margin: 0;
+  max-width: 100%;
+  white-space: normal;
+  word-wrap: break-word;
+  transition: color 0.3s ease;
+}
+
+.ln-feature-row:hover .ln-feature-desc {
+  color: #fff;
+}
+
+/* ========== TECH STACK (from old metrics) ========== */
+.ln-stack-item {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(32px, 4vw, 56px);
+  letter-spacing: -0.03em;
+  color: var(--red);
+  line-height: 1;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .ln-content-grid {
+    grid-template-columns: 1fr;
+  }
+  .ln-feature-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .ln-feature-row-right {
+    justify-content: flex-start;
+  }
+  .ln-feature-desc {
+    text-align: left;
+  }
+}

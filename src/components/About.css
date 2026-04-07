@@ -1,0 +1,66 @@
+.about-section {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.about-label {
+  margin-bottom: clamp(16px, 2vw, 28px);
+  margin-top: clamp(32px, 5vw, 60px);
+}
+
+/* ========== BIO WITH CHARACTER SPREAD ========== */
+.about-bio {
+  max-width: 100%;
+  color: var(--cream);
+  letter-spacing: 0em;
+  transition: letter-spacing 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+  word-break: break-word;
+  line-height: 1.25;
+}
+
+.about-bio-spread {
+  letter-spacing: 0.35em;
+}
+
+/* ========== SOCIAL LINKS ========== */
+.about-links {
+  display: flex;
+  gap: clamp(24px, 4vw, 60px);
+  flex-wrap: wrap;
+  padding: 10px 0; /* Fix cropping issue when scaling */
+}
+
+.about-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: clamp(16px, 1.6vw, 22px);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  padding: 12px 24px;
+  border: 1px solid var(--cream-faint);
+  border-radius: 100px;
+  text-decoration: none;
+  color: var(--cream);
+}
+
+.about-link:hover {
+  transform: scale(1.12);
+  border-color: var(--red);
+  color: var(--red);
+  box-shadow: 0 0 30px rgba(200, 16, 46, 0.15);
+}
+
+.about-link-arrow {
+  opacity: 0;
+  transition: all 0.3s ease;
+  transform: translate(-4px, 4px);
+}
+
+.about-link:hover .about-link-arrow {
+  opacity: 1;
+  transform: translate(0, 0);
+}

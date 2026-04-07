@@ -1,0 +1,165 @@
+.skills-section {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.skills-title {
+  margin-bottom: 0px;
+  font-size: clamp(90px, 20vw, 280px); /* Massive display text size */
+  color: var(--red);
+  text-transform: lowercase;
+  animation: skills-strobe 1.5s infinite;
+}
+
+@keyframes skills-strobe {
+  0%, 49.9% { color: var(--red); }
+  50%, 100% { color: #ffffff; }
+}
+
+/* ========== PHONES GRID ========== */
+.skills-phones-grid {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: center;
+  gap: clamp(24px, 3vw, 40px);
+  margin-top: clamp(32px, 5vw, 60px);
+}
+
+@media (max-width: 900px) {
+  .skills-phones-grid {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-phones-grid {
+    grid-template-columns: auto;
+  }
+}
+
+.skills-phone-frame {
+  background-color: #E8DECC; /* Neutral chassis color for device frame */
+  width: 260px;
+  height: 550px;
+  border-radius: 38px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  flex-shrink: 0;
+}
+
+.skills-phone-speaker {
+  width: 50px;
+  height: 5px;
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  margin-top: 26px;
+  margin-bottom: 26px;
+}
+
+.skills-phone-screen {
+  background-color: #0a0a0a;
+  width: 232px;
+  height: 400px;
+  padding: 20px 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.skills-phone-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.skills-phone-home-button {
+  width: 44px;
+  height: 44px;
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  margin-top: auto;
+  margin-bottom: 18px;
+}
+
+/* ========== SKILL ITEMS ========== */
+.skills-row-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.skills-row-num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 16px; /* Increased from 13px */
+  color: var(--red); /* Changed from dim cream to red */
+  letter-spacing: 0.02em;
+}
+
+.skills-row-category {
+  font-family: var(--font-body);
+  font-size: 15px; /* Increased from 11px */
+  font-weight: 700; /* Increased to bold */
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+.skills-row-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skills-pill {
+  display: inline-block;
+  padding: 6px 14px;
+  border: 1px solid var(--cream-faint);
+  border-radius: 100px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  color: var(--cream-dim);
+}
+
+.skills-pill:hover {
+  border-color: #ffffff;
+  color: #ffffff;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+  animation: pill-strobe 0.4s ease-in-out;
+}
+
+@keyframes pill-strobe {
+  0% { box-shadow: 0 0 0px rgba(255, 255, 255, 0); }
+  25% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.4); color: #fff; }
+  50% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.1); color: #ccc; }
+  75% { box-shadow: 0 0 25px rgba(255, 255, 255, 0.35); color: #fff; }
+  100% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.15); color: #fff; }
+}
+
+/* ========== TYPEWRITER ========== */
+.typewriter-content {
+  font-family: var(--font-body);
+  font-size: clamp(14px, 1.2vw, 16px);
+  color: var(--cream);
+  line-height: 1.8;
+  white-space: pre-wrap; /* Ensures \n creates a new line */
+}
+
+.typewriter-cursor {
+  color: var(--red);
+  font-weight: 700;
+  animation: typewriter-blink 1s step-end infinite;
+}
+
+@keyframes typewriter-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}

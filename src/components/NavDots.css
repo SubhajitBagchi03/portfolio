@@ -1,0 +1,74 @@
+.nav-dots {
+  position: fixed;
+  right: clamp(16px, 2vw, 32px);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9000;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-end;
+}
+
+.nav-dot-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  padding: 6px;
+  position: relative;
+  outline: none;
+}
+
+.nav-dot-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cream-faint);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.nav-dot-active .nav-dot-indicator {
+  background: var(--red);
+  box-shadow: 0 0 12px var(--red-glow);
+  width: 10px;
+  height: 10px;
+}
+
+.nav-dot-btn:hover .nav-dot-indicator {
+  background: var(--cream);
+  transform: scale(1.3);
+}
+
+.nav-dot-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--cream-dim);
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(8px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  position: absolute;
+  right: 28px;
+}
+
+.nav-dot-btn:hover .nav-dot-label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.nav-dot-active .nav-dot-label {
+  color: var(--red);
+}
+
+/* Hide on mobile */
+@media (max-width: 768px) {
+  .nav-dots {
+    display: none;
+  }
+}

@@ -1,0 +1,122 @@
+.contact-section {
+  padding-top: 0; /* Remove top section padding to minimize gap */
+  margin-top: clamp(-40px, -6vw, -100px); /* Tighter gap to education section */
+}
+
+.contact-label {
+  margin-top: clamp(12px, 1.5vw, 20px);
+  margin-bottom: clamp(8px, 1vw, 12px);
+}
+
+/* ========== SAY HELLO ========== */
+.contact-hello-link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+.contact-title {
+  will-change: transform;
+  margin-bottom: 0;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
+  font-size: clamp(80px, 18vw, 280px); /* Massive font scale */
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+  white-space: nowrap;
+}
+
+/* Hover: stretch vertically like pic 2 */
+.contact-hello-link:hover .contact-title {
+  transform: scaleY(1.8) scaleX(0.85);
+}
+
+/* ========== LINK ROWS WITH THICK LINES ========== */
+.contact-links-block {
+  margin-top: clamp(80px, 12vw, 160px); /* Added large gap requested between say hello and lines */
+  border-top: 3px solid rgba(255, 255, 255, 0.8);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.8);
+  width: 100%;
+}
+
+.contact-link-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(20px, 2.5vw, 32px) 0;
+  text-decoration: none;
+  color: var(--cream);
+  transition: color 0.5s ease;
+}
+
+/* Divider between rows: single line */
+.contact-link-row + .contact-link-row,
+div:has(> .contact-link-row) + div > .contact-link-row {
+  border-top: 3px solid rgba(255, 255, 255, 0.8);
+}
+
+/* Hover: text group stretches sideways, turns red, increases spacing */
+.contact-link-row:hover {
+  color: var(--red);
+}
+
+.contact-link-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1), padding-left 1s ease;
+  transform-origin: left center;
+}
+
+.contact-link-row:hover .contact-link-left {
+  transform: scaleX(1.3);
+  padding-left: 12px;
+}
+
+.contact-link-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(20px, 2.5vw, 32px);
+  letter-spacing: -0.02em;
+  transition: letter-spacing 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-link-row:hover .contact-link-name {
+  letter-spacing: 0.25em;
+}
+
+/* Arrow: bold red, flips left on hover */
+.contact-link-arrow {
+  font-size: clamp(22px, 2.5vw, 32px);
+  color: var(--red);
+  display: inline-block;
+  transition: transform 0.5s ease;
+  transform-origin: center center;
+}
+
+.contact-link-row:hover .contact-link-arrow {
+  transform: scaleX(-1);
+}
+
+/* ========== FOOTER ========== */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(20px, 2.5vw, 32px) 0;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: clamp(40px, 5vw, 80px);
+}
+
+.footer-text {
+  font-family: var(--font-body);
+  font-size: clamp(12px, 0.9vw, 14px);
+  color: var(--cream-dim);
+}
+
+.footer-year {
+  font-family: var(--font-body);
+  font-size: clamp(12px, 0.9vw, 14px);
+  color: var(--cream-dim);
+}
